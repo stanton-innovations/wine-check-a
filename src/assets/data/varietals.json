@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Pinot Noir",
+        "value": "Pinot Noir"
+    },
+    {
+        "name": "Cabernet Sauvignon",
+        "value": "Cabernet Sauvignon"
+    },
+    {
+        "name": "Merlot",
+        "value": "Merlot"
+    },
+    {
+        "name": "Chardonnay",
+        "value": "Chardonnay"
+    },
+    {
+        "name": "Syrah",
+        "value": "Syrah"
+    },
+    {
+        "name": "Zinfadel",
+        "value": "Zinfadel"
+    },
+    {
+        "name": "Sauvignon Blanc",
+        "value": "Sauvignon Blanc"
+    },
+    {
+        "name": "Pinot Gris",
+        "value": "Pinot Gris"
+    },
+    {
+        "name": "Riesling",
+        "value": "Riesling"
+    }
+]

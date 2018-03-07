@@ -1,0 +1,11 @@
+<div class="varietals-container">
+    <div>
+      <label for="varietals" class="center-block">Varietals</label>
+    </div>
+    <div>
+      <select class="form-control">
+        <option [value]="null">-- Select One --</option>
+        <option *ngFor="let varietal of varietals" [value]="varietal.value">{{varietal.name}}</option>
+      </select>
+    </div>
+</div>
