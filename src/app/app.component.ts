@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { VarietalsService } from './services/varietals/varietals.service';
 import { Subscription } from 'rxjs/Subscription';
+import 'rxjs/add/operator/distinct';
+import 'rxjs/add/operator/switchMap';
 import { SearchWineForm } from './interfaces/search-wine.interface';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RegionsService } from './services/regions/regions.service';
@@ -25,15 +27,21 @@ export class AppComponent {
 
     this.varietalResults = this.varietalService.getTypes()
       .subscribe(data => {
-        
         this.varietals = data;
         console.log('var back', this.varietals);
       });
 
-    this.regionResults = this.regionService.getRegions()
-      .subscribe(data => {
-        
-        this.regions = data;
+    this.regionService.getUSRegions()
+      .switchMap((regions: any) => {
+        return regions; 
+      })
+      .filter((regions) => regions['#text'] !== 'Region')
+      .distinct(function(x) {
+        return x['#text'];
+      })
+      .subscribe(regions => {
+  
+        this.regions = regions;
         console.log('reg back', this.regions);
       });  
   }

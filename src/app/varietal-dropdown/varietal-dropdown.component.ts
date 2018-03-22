@@ -22,14 +22,6 @@ export class VarietalDropdownComponent implements OnInit {
 
   ngOnInit() {
     console.log('srch', this.searchForm)
-    // this.varietals = new FormGroupName(
-    // this.searchForm,
-    // Validators.required,
-    // null)
-
-    // {
-    //   varietals: ['', Validators.required]
-    // }
   }
 
   ngOnChanges() {
