@@ -6,15 +6,19 @@
   </div>
   <div  class="padding-md">
       <form [formGroup]="searchForm" novalidate>
-          <div class="form-group">
+          <div class="form-control">
             <varietal-dropdown
               [searchForm]="searchForm"
               [varietals]="varietals">
             </varietal-dropdown>
+          </div>
+          <div class="form-control">
             <region-dropdown
               [searchForm]="searchForm"
               [regions]="regions">
             </region-dropdown>
+          </div>
+          <div class="form-control">
             <vintage-dropdown
               [searchForm]="searchForm"
               [vintages]="vintages">
