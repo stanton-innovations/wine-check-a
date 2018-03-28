@@ -34,7 +34,7 @@ export class VintagesService {
                   });
               });
           });
-          console.log('vintages?', this.vintages);
+          
           return this.vintages;
       });
     }

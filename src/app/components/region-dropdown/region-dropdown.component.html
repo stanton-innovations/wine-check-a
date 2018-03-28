@@ -3,9 +3,9 @@
     <label for="region" class="center-block">Region</label>
   </div>
   <div>
-    <select class="form-control" formControlName="regions">
+    <select class="form-control">
       <option [value]="null">Select a region</option>
-      <option *ngFor="let region of regions" [value]="region.value">{{region.name}}</option>
+      <option *ngFor="let region of regions" [value]="region">{{region}}</option>
     </select>
   </div>
 </div>

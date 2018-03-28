@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-region-dropdown',
+  selector: 'region-dropdown',
   templateUrl: './region-dropdown.component.html',
   styleUrls: ['./region-dropdown.component.scss']
 })

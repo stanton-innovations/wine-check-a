@@ -1,3 +1,11 @@
-<p>
-  vintage-dropdown works!
-</p>
+<div class="vintages-container">
+  <div>
+    <label for="vintages" class="center-block">Vintages</label>
+  </div>
+  <div>
+    <select class="form-control">
+      <option [value]="null">-- Select One --</option>
+      <option *ngFor="let vintage of vintages" [value]="vintage">{{vintage}}</option>
+    </select>
+  </div>
+</div>

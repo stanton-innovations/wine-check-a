@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-vintage-dropdown',
+  selector: 'vintage-dropdown',
   templateUrl: './vintage-dropdown.component.html',
   styleUrls: ['./vintage-dropdown.component.scss']
 })

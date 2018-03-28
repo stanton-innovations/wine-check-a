@@ -16,10 +16,11 @@ import { VintagesService } from './services/vintages/vintages.service';
 export class AppComponent {
   private varietalResults: Subscription;
   private regionResults: Subscription;
+  private vintageResults: Subscription;
 
   varietals: any;
-  regions: any;
-  vins: any;
+  regions: Array<string>;
+  vintages: Array<string>;
   searchForm: FormGroup;
 
   constructor(
@@ -28,11 +29,15 @@ export class AppComponent {
     public vintageService: VintagesService,
     public fb: FormBuilder) {
 
+    this.vintages = new Array<string>();
+    this.regions = new Array<string>();
+
     this.varietalResults = this.varietalService
       .getTypes()
       .subscribe(data => {
         this.varietals = data;
       });
+
 
     this.regionService.getUSRegions()
       .switchMap((regions: any) => {
@@ -43,8 +48,9 @@ export class AppComponent {
         return x['#text'];
       })
       .subscribe(regions => {
-        this.regions = regions;
+        this.regions.push(regions['#text']);
       });
+
 
     this.vintageService.getVintages()
       .switchMap((vins: any) => {
@@ -55,16 +61,15 @@ export class AppComponent {
         return x['#text'];
       })
       .subscribe(vins => {
-        this.vins = vins;
-        console.log('vins back', this.vins);
+        this.vintages.push(vins['#text']);
       });  
   }
 
   ngOnInit() {
     this.searchForm = this.fb.group({
       'varietals': ['', Validators.required],
-      'regions': ['', Validators.required],
-      'vintages': ['', Validators.required]
+      'regions': [''],
+      'vintages': ['']
     })
   }
 
@@ -76,5 +81,10 @@ export class AppComponent {
     if (this.regionResults) {
       this.regionResults.unsubscribe();
     }
+
+    if (this.vintageResults) {
+      this.vintageResults.unsubscribe();
+    }
  }
+
 }
