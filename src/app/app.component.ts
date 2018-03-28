@@ -6,6 +6,7 @@ import 'rxjs/add/operator/switchMap';
 import { SearchWineForm } from './interfaces/search-wine.interface';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RegionsService } from './services/regions/regions.service';
+import { VintagesService } from './services/vintages/vintages.service';
 
 @Component({
   selector: 'app-root',
@@ -18,17 +19,19 @@ export class AppComponent {
 
   varietals: any;
   regions: any;
+  vins: any;
   searchForm: FormGroup;
 
   constructor(
     public varietalService: VarietalsService,
-    public fb: FormBuilder,
-    public regionService: RegionsService) {
+    public regionService: RegionsService,
+    public vintageService: VintagesService,
+    public fb: FormBuilder) {
 
-    this.varietalResults = this.varietalService.getTypes()
+    this.varietalResults = this.varietalService
+      .getTypes()
       .subscribe(data => {
         this.varietals = data;
-        console.log('var back', this.varietals);
       });
 
     this.regionService.getUSRegions()
@@ -40,15 +43,28 @@ export class AppComponent {
         return x['#text'];
       })
       .subscribe(regions => {
-  
         this.regions = regions;
-        console.log('reg back', this.regions);
+      });
+
+    this.vintageService.getVintages()
+      .switchMap((vins: any) => {
+        return vins; 
+      })
+      .filter((vins) => vins['#text'] !== '2006')
+      .distinct(function(x) {
+        return x['#text'];
+      })
+      .subscribe(vins => {
+        this.vins = vins;
+        console.log('vins back', this.vins);
       });  
   }
 
   ngOnInit() {
     this.searchForm = this.fb.group({
-      'varietals': ['', Validators.required]
+      'varietals': ['', Validators.required],
+      'regions': ['', Validators.required],
+      'vintages': ['', Validators.required]
     })
   }
 

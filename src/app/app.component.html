@@ -9,12 +9,16 @@
           <div class="form-group">
             <varietal-dropdown
               [searchForm]="searchForm"
-              [varietals]="varietals">
+              [varietals]="varietals | async">
             </varietal-dropdown>
             <region-dropdown
               [searchForm]="searchForm"
               [regions]="regions">
             </region-dropdown>
+            <vintage-dropdown
+              [searchForm]="searchForm"
+              [vintages]="vintages">
+            </vintage-dropdown>
           </div>
       </form>
   </div>

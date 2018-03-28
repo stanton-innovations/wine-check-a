@@ -10,13 +10,16 @@ import { VarietalDropdownComponent } from './varietal-dropdown/varietal-dropdown
 import { VarietalsService } from './services/varietals/varietals.service';
 import { RegionDropdownComponent } from './region-dropdown/region-dropdown.component';
 import { RegionsService } from './services/regions/regions.service';
+import { VintagesService } from './services/vintages/vintages.service';
+import { VintageDropdownComponent } from './vintage-dropdown/vintage-dropdown/vintage-dropdown.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     VarietalDropdownComponent,
-    RegionDropdownComponent
+    RegionDropdownComponent,
+    VintageDropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { RegionsService } from './services/regions/regions.service';
   providers: [
     VarietalsService,
     RegionsService,
+    VintagesService,
     FormBuilder
   ],
   bootstrap: [

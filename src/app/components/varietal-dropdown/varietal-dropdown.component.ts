@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormGroupName, FormControl } from '@angular/forms';
-import { VarietalsService } from '../services/varietals/varietals.service';
-import { SearchWineForm } from '../interfaces/search-wine.interface';
+import { VarietalsService } from '../../services/varietals/varietals.service';
+import { SearchWineForm } from '../../interfaces/search-wine.interface';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs/Subscription';
 
