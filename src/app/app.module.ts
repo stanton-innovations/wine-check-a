@@ -6,12 +6,12 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { VarietalDropdownComponent } from './varietal-dropdown/varietal-dropdown.component';
+import { VarietalDropdownComponent } from './components/varietal-dropdown/varietal-dropdown.component';
 import { VarietalsService } from './services/varietals/varietals.service';
-import { RegionDropdownComponent } from './region-dropdown/region-dropdown.component';
+import { RegionDropdownComponent } from './components/region-dropdown/region-dropdown.component';
 import { RegionsService } from './services/regions/regions.service';
 import { VintagesService } from './services/vintages/vintages.service';
-import { VintageDropdownComponent } from './vintage-dropdown/vintage-dropdown/vintage-dropdown.component';
+import { VintageDropdownComponent } from './components/vintage-dropdown/vintage-dropdown.component';
 
 
 @NgModule({

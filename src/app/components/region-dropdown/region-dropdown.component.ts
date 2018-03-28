@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-region-dropdown',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./region-dropdown.component.scss']
 })
 export class RegionDropdownComponent implements OnInit {
+
+  @Input() searchForm: FormGroup;
+  @Input() regions: any;
 
   constructor() { }
 

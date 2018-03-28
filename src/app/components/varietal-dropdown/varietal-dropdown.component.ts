@@ -16,15 +16,9 @@ export class VarietalDropdownComponent implements OnInit {
   @Input() varietals: any;
   varietal: any;
 
-  constructor(
-    public fb: FormBuilder,
-    private ref: ChangeDetectorRef) {}
+  constructor() {}
 
   ngOnInit() {
     console.log('srch', this.searchForm)
-  }
-
-  ngOnChanges() {
-    this.ref.detectChanges();
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-vintage-dropdown',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vintage-dropdown.component.scss']
 })
 export class VintageDropdownComponent implements OnInit {
+
+  @Input() searchForm: FormGroup;
+  @Input() vintages: any;
 
   constructor() { }
 
