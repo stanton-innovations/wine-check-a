@@ -68,8 +68,8 @@ export class AppComponent {
   ngOnInit() {
     this.searchForm = this.fb.group({
       'varietals': ['', Validators.required],
-      'regions': [''],
-      'vintages': ['']
+      'regions': ['', Validators.required],
+      'vintages': ['', Validators.required]
     })
   }
 
