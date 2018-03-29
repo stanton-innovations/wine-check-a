@@ -1,15 +1,24 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { RegionsService } from './regions.service';
 
-describe('RegionsService', () => {
+describe('RegionService', () => {
+  let service: RegionsService;
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule
+      ],
       providers: [RegionsService]
     });
   });
 
-  it('should be created', inject([RegionsService], (service: RegionsService) => {
+  beforeEach(() => {
+    service = TestBed.get(RegionsService);
+  });
+  it('should be created', () => {
     expect(service).toBeTruthy();
-  }));
+  });
 });
+

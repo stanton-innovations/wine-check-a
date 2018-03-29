@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,10 +8,11 @@ import { FormGroup } from '@angular/forms';
 })
 export class RegionDropdownComponent implements OnInit {
 
-  @Input() searchForm: FormGroup;
+  @Input() public searchForm: FormGroup;
   @Input() regions: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
