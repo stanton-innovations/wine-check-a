@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class VintageDropdownComponent implements OnInit {
 
-  @Input() searchForm: FormGroup;
+  @Input() public searchForm: FormGroup;
   @Input() vintages: any;
 
   constructor() { }

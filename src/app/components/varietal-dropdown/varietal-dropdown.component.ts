@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormGroupName, FormControl } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'varietal-dropdown',
@@ -11,7 +10,8 @@ export class VarietalDropdownComponent implements OnInit {
 
   @Input() varietals: any;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
   }

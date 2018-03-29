@@ -1,9 +1,10 @@
+// types are inferred so removing the string reference
 export class Region {
-    text: string = "";
-    fontName: string = "";
-    fontSize: string = ""; 
-    x: string = "";
-    y: string = "";
-    width: string = "";
-    height: string = "";
+    text = '';
+    fontName = '';
+    fontSize = '';
+    x = '';
+    y = '';
+    width = '';
+    height = '';
 }
