@@ -13,6 +13,7 @@ import { RegionsService } from './services/regions/regions.service';
 import { VintagesService } from './services/vintages/vintages.service';
 import { VintageDropdownComponent } from './components/vintage-dropdown/vintage-dropdown.component';
 
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { VintageDropdownComponent } from './components/vintage-dropdown/vintage-
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OwlModule
   ],
   providers: [
     VarietalsService,

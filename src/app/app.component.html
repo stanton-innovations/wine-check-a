@@ -30,6 +30,17 @@
             </button>
           </div>
       </form>
+
+      <owl-carousel
+          [options]="{items: 3, dots: true, navigation: true}"
+          [items]="images"
+          [carouselClasses]="['owl-theme', 'row', 'sliding']"
+          #owlCarousel>
+          <div class="item" *ngFor="let image of images;let i = index">
+            <div class="thumbnail-image">blah</div>
+            <img src="assets/wc_logo.png"/>
+          </div>
+      </owl-carousel>
   </div>
 </div>
 <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, HostBinding } from '@angular/core';
 import { VarietalsService } from './services/varietals/varietals.service';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/distinct';
@@ -8,20 +8,25 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RegionsService } from './services/regions/regions.service';
 import { VintagesService } from './services/vintages/vintages.service';
 
+import { OwlCarousel }  from 'ngx-owl-carousel';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   private varietalResults: Subscription;
   private regionResults: Subscription;
   private vintageResults: Subscription;
 
+  @ViewChild('owlCarousel') owlElement: OwlCarousel
+  
   varietals: any;
   regions: Array<string>;
   vintages: Array<string>;
   searchForm: FormGroup;
+  images: any = ['1', '2', '3', '4', '5'];
 
   constructor(
     public varietalService: VarietalsService,
@@ -70,7 +75,7 @@ export class AppComponent {
       'varietals': ['', Validators.required],
       'regions': ['', Validators.required],
       'vintages': ['', Validators.required]
-    })
+    });
   }
 
   ngOnDestroy() {
@@ -87,4 +92,13 @@ export class AppComponent {
     }
  }
 
+ initOwl() {
+  console.log('owl', this.owlElement);
+  // console.log('owl jq', $('.owl-carousel'));
+  this.owlElement.$owlChild.$owl.owlCarousel({});
+ }
+
+ ngAfterViewInit() {
+   this.initOwl();
+ }
 }
